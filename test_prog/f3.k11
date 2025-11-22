@@ -1,0 +1,40 @@
+# PROGRAM ts3; 
+START DATA INTEGER32 aa1 , bb2 , cy3 , cy4 , xv5;
+  GET ( aa1 );
+  GET ( bb2 );
+
+ aa1 :> cy3;
+ ls1:
+  IF cy3 >= bb2 + 1 {
+    GOTO le1;
+  }
+  PUT ( cy3 * cy3 );
+  cy3 + 1 :> cy3;
+  GOTO ls1;
+ le1:
+
+  0 :> xv5 ;
+  1 :>cy3;
+ls2:
+  IF cy3 >= aa1 + 1 {
+     GOTO le2;
+  }
+  1 :> cy4; 
+ls3:
+  IF cy4 >= bb2 + 1 {
+     GOTO le3;
+  }
+   xv5 + 1 :> xv5;
+   cy4 + 1 :> cy4;
+  GOTO ls3;
+le3:
+    cy3 + 1 :> cy3;
+  GOTO ls2;
+le2:
+  PUT ( xv5 );
+
+STOP 
+
+
+
+
