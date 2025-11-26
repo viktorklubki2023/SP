@@ -1,0 +1,17 @@
+# PROGRAM ts1;
+START DATA INTEGER32 aa1, bb2, xx3, yy4 ;
+GET ( aa1 );
+GET ( bb2 );
+
+PUT ( aa1 + bb2 );
+PUT ( aa1 - bb2 );
+PUT ( aa1 * bb2 );
+PUT ( aa1 DIV bb2 );
+PUT ( aa1 MOD bb2 );
+
+( aa1 - bb2 ) * 10 + ( aa1 + bb2 ) DIV 10 :> xx3 ;
+xx3 + xx3 MOD 10 :> yy4 ;
+
+PUT ( xx3 );
+PUT ( yy4 );
+STOP

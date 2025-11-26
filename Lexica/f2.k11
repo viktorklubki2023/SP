@@ -1,0 +1,33 @@
+# PROGRAM ts2;
+START DATA INTEGER32 aa1, bb2, cc3, ma4 ;
+GET ( aa1 );
+GET ( bb2 );
+GET ( cc3 );
+
+IF ( aa1 >= bb2 ) AND ( aa1 >= cc3 ) {
+ aa1 :> ma4;
+} ELSE IF ( bb2 >= aa1 ) AND ( bb2 >= cc3 ) {
+ bb2 :> ma4;
+} ELSE {
+ cc3 :> ma4;
+}
+PUT ( ma4 );
+
+IF ( bb2 = aa1 ) AND ( cc3 = aa1 ) AND ( cc3 = bb2 ) {
+PUT ( 1 );
+} ELSE {
+PUT ( 0 );
+};
+
+IF ! ( aa1 >= 0) || ! ( bb2 >= 0) || ! ( cc3 >=0) {
+PUT ( -1 );
+} ELSE {
+PUT ( 0 );
+};
+
+IF aa1 >= (bb2 + cc3) {
+PUT ( 10 );
+} ELSE {
+PUT ( 0 );
+}
+STOP
